@@ -80,10 +80,10 @@ pub fn add_flake_input(key: &str, url: &str) -> Result<(), Error> {
  * to each node, returning the first non-None result.
  *
  * @tparam T The type returned by the closure.
- * @tparam F The closure type, which takes a SyntaxNode and returns Option<T>.
+ * @tparam F The closure type, which takes a SyntaxNode and returns `Option<T>`.
  * @param node The root SyntaxNode to start traversal from.
  * @param f The closure to apply to each node.
- * @return Option<T> The first non-None result from the closure, or None if not found.
+ * @return `Option<T>` The first non-None result from the closure, or None if not found.
  */
 fn find_node<T, F>(node: SyntaxNode, mut f: F) -> Option<T>
 where

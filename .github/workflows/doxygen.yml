@@ -1,4 +1,4 @@
-name: Doxygen Docs
+name: Rust Docs
 
 on:
   push:
@@ -13,16 +13,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Doxygen
-        run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          override: true
 
-      - name: Generate Doxygen Docs
-        run: doxygen Doxyfile
+      - name: Build Rust Documentation
+        run: cargo doc --no-deps --workspace
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./html
+          publish_dir: ./target/doc/nix_shell_gen
           force_orphan: true
