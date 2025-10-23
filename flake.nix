@@ -31,7 +31,7 @@
       let
         overlays = [
           (import rust-overlay)
-          crane.overlay
+          crane.overlays.default
         ];
         pkgs = import nixpkgs {
           inherit system overlays;
