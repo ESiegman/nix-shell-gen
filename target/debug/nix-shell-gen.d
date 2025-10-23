@@ -1,0 +1,1 @@
+/home/eren/Dev/nix-shell-gen/target/debug/nix-shell-gen: /home/eren/Dev/nix-shell-gen/src/commands.rs /home/eren/Dev/nix-shell-gen/src/config.rs /home/eren/Dev/nix-shell-gen/src/flake_editor.rs /home/eren/Dev/nix-shell-gen/src/main.rs /home/eren/Dev/nix-shell-gen/src/templates.rs
