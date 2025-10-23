@@ -41,7 +41,7 @@
           extensions = [ "rust-src" ];
         };
 
-        craneLib = crane.packages.${system}.default.overrideToolchain rustToolchain;
+        craneLib = pkgs.craneLib.overrideToolchain rustToolchain;
 
         nix-shell-gen = craneLib.buildPackage {
           pname = "nix-shell-gen";
