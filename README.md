@@ -1,6 +1,37 @@
 # nix-shell-gen
 
+![CI](https://github.com/esiegman/nix-shell-gen/actions/workflows/ci.yml/badge.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+[![Docs](https://img.shields.io/badge/docs-github%20pages-blue)](https://esiegman.github.io/nix-shell-gen/)
+
 **nix-shell-gen** is a CLI tool to declaratively generate and manage [Nix flake](https://nixos.wiki/wiki/Flakes) development shells. It helps you quickly scaffold and evolve reproducible development environments using `flake.nix` and `devshell.toml`, with support for language templates, custom packages, shell hooks, and additional flake inputs.
+
+---
+
+## Table of Contents
+
+- [Quick Start](#quick-start)
+- [Features](#features)
+- [Supported Language Templates](#supported-language-templates)
+- [Adding nix-shell-gen to Your Flake](#adding-nix-shell-gen-to-your-flake)
+- [Building & Installing from Scratch](#building--installing-from-scratch)
+- [CLI Usage](#cli-usage)
+- [Example Workflows](#example-workflows)
+- [Generated Files](#generated-files)
+- [Advanced: Customizing the Flake](#advanced-customizing-the-flake)
+- [Links](#links)
+- [Roadmap](#roadmap)
+- [Contributions](#contributions)
+- [License](#license)
+
+---
+
+## Quick Start
+
+```sh
+nix profile install github:esiegman/nix-shell-gen
+nix-shell-gen init --lang rust
+```
 
 ---
 
@@ -10,6 +41,18 @@
 - **Declarative Management:** Add packages, flake inputs, and shell hooks to your devshell configuration.
 - **Safe Editing:** Automatically edits `flake.nix` and `devshell.toml` for you.
 - **Composable:** Designed to be used standalone or as a flake input in other projects.
+
+---
+
+## Supported Language Templates
+
+When initializing a new dev shell, you can use the `--lang` option with the following templates:
+
+- **rust**: Adds `rustc`, `cargo`, `rust-analyzer`
+- **cpp** or **c++**: Adds `clang`, `cmake`, `gdb`
+- **python**: Adds `python3`
+
+You can also specify additional packages with `--packages` or add your own custom setup.
 
 ---
 
@@ -122,6 +165,23 @@ nix-shell-gen add [OPTIONS]
 
 ## Example Workflows
 
+---
+
+## Generated Files
+
+- **flake.nix:** Nix flake definition, generated and updated automatically.
+- **devshell.toml:** Declarative list of packages, shell hooks, and purity flag.
+
+---
+
+## Advanced: Customizing the Flake
+
+You can manually edit `flake.nix` and `devshell.toml` for advanced use cases. The CLI will attempt to preserve your changes where possible.
+
+---
+
+## Example Workflows
+
 ### 1. Initialize a Rust Dev Shell
 
 ```sh
@@ -163,9 +223,34 @@ You can manually edit `flake.nix` and `devshell.toml` for advanced use cases. Th
 
 ---
 
-## Contributing
+## Roadmap
 
-Contributions, bug reports, and feature requests are welcome! Please open an issue or PR on GitHub.
+- [ ] Add more language templates (Java, Go, Node.js, etc.)
+- [ ] Interactive CLI mode
+- [ ] TUI (Terminal User Interface) mode
+- [ ] Template customization via config
+- [ ] Improved error messages and diagnostics
+- [ ] More documentation and usage examples
+
+---
+
+## Links
+
+- [Documentation (GitHub Pages)](https://esiegman.github.io/nix-shell-gen/)
+- [Nix Flakes Wiki](https://nixos.wiki/wiki/Flakes)
+
+---
+
+## Contributions
+
+Contributions are welcome! If you have ideas, bug reports, or want to add features (like new language templates or CLI improvements):
+
+- Please open an issue to discuss your idea or report a bug.
+- Pull requests are encouraged—try to keep them focused and well-described.
+- For larger changes, open an issue first to discuss your approach.
+- Make sure your code is formatted and runs.
+
+Thank you for helping improve `nix-shell-gen`!
 
 ---
 
