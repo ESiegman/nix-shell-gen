@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["FLAKE_FILE"],"fn":["generate_flake_nix"]};

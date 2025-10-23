@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Commands"],"fn":["main","parse_flake_input","parse_input_to_pkg_string"],"mod":["commands","config","flake_editor","templates"],"struct":["AddArgs","Cli","InitArgs"]};
