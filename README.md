@@ -1,6 +1,5 @@
 # nix-shell-gen
 
-![CI](https://github.com/esiegman/nix-shell-gen/actions/workflows/ci.yml/badge.svg)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 [![Docs](https://img.shields.io/badge/docs-github%20pages-blue)](https://esiegman.github.io/nix-shell-gen/)
 
